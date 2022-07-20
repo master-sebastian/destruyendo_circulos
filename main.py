@@ -50,7 +50,7 @@ while True:
             circulo.pintar()
     else:
         font1 = pygame.font.Font(None, 64)
-        text1 = font1.render("Ganaste el juego", True, (10, 10, 10))
+        text1 = font1.render("Ganaste el juego \(^.^)/", True, (10, 10, 10))
         textpos1 = text1.get_rect(centerx=screen.get_width() / 2, y=350)
         screen.blit(text1, textpos1)
     
