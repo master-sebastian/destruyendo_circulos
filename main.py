@@ -1,7 +1,7 @@
-import sys, pygame, os, json, io
+import sys, pygame, os, json
 from objetos.circulo import Circulo
 
-from urllib.request import urlopen
+
 """" Arranque de pygame"""
 pygame.init()
 
@@ -19,11 +19,7 @@ black = 255, 87, 51
 
 screen = pygame.display.set_mode(size)
 
-image_url = "https://place.dog/300/200"
-image_str = urlopen(image_url).read()
-image_file = io.BytesIO(image_str)
-
-ball = pygame.image.load(image_file)
+ball = pygame.image.load("img"+os.sep+"asistente-robot.png")
 ball= pygame.transform.scale(ball, (50, 50))
 ballrect = ball.get_rect()
 disparo = False
