@@ -1,7 +1,17 @@
-import sys, pygame, os
+import sys, pygame, os, json
 from objetos.circulo import Circulo
 
+
+"""" Arranque de pygame"""
 pygame.init()
+
+
+""" Lectura de archivo de configuracion"""
+base_path = os.path.dirname(os.path.abspath(__file__))
+with open(os.path.join(base_path, "config.JSON")) as f:
+   config_json = json.load(f)
+
+
 
 size = width, height = 800, 700
 speed = [2, 2]
@@ -14,7 +24,7 @@ ball= pygame.transform.scale(ball, (50, 50))
 ballrect = ball.get_rect()
 disparo = False
 contador = 0
-puntos = 12
+puntos = config_json["total_puntos"]
 listado_circulos = []
 for i in range(puntos):
     listado_circulos.append(Circulo(screen, listado_circulos, 50, 50))
@@ -45,7 +55,7 @@ while True:
 
     screen.fill(black)
     
-    if contador < 12:
+    if contador < puntos:
         for circulo in listado_circulos:
             circulo.pintar()
     else:
