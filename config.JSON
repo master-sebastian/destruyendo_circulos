@@ -1,3 +1,4 @@
 {
-    "total_puntos" : 15
+    "total_puntos" : 15,
+    "mensaje_de_victoria": "Ganaste el juego \\(^.^)/"
 }
